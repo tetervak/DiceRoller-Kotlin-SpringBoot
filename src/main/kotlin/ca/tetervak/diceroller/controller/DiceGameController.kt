@@ -22,7 +22,12 @@ class DiceGameController {
 
         return if (isRolled) {
             logger.debug("dice is rolled")
-            val game = DiceGame(numberOfDice)
+            val game = if (numberOfDice in 1..5) {
+                DiceGame(numberOfDice)
+            } else {
+                logger.warn("the numberOfDice is out of the range: $numberOfDice")
+                DiceGame(3)
+            }
             game.roll()
             logger.debug("game.rollData = ${game.rollData}")
             ModelAndView("GameResult").apply {
