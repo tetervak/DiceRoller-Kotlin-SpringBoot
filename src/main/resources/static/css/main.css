@@ -18,22 +18,6 @@ h2 {
     color: #00bcd4;
 }
 
-a{
-    color: #0288D1;
-    font-weight: bolder;
-    text-decoration: none;
-}
-
-a:hover{
-    text-decoration: underline;
-}
-
-span.cardName{
-    font-size: larger;
-    font-weight: bolder;
-    color: #ff9800;
-}
-
 .total_label{
     color: #673ab7;
     font-size: larger;
