@@ -12,7 +12,7 @@ class DiceGame(
     }
 
     private val dice: List<Dice> = List(numberOfDice) {
-        Dice(Dice.DEFAULT_INIT_VALUE, random)
+        Dice(random = random)
     }
 
     var isRolled: Boolean = false
@@ -36,7 +36,7 @@ class DiceGame(
             } else 0
         }
 
-    constructor(rollData: RollData) : this(numberOfDice = rollData.values.size) {
+    constructor(rollData: RollData) : this(numberOfDice = rollData.numberOfDice) {
         for ((index, value) in rollData.values.withIndex()) {
             dice[index].value = value
         }

@@ -109,10 +109,7 @@ internal class DiceTest {
     @RepeatedTest(5)
     fun roll(repetitionInfo: RepetitionInfo) {
         val random = Random(seed = repetitionInfo.currentRepetition)
-        val dice = Dice(
-            initValue = Dice.DEFAULT_INIT_VALUE,
-            random = random
-        )
+        val dice = Dice(random = random)
         println("before roll: dice = $dice")
         dice.roll()
         assertTrue(dice.value > 0)
